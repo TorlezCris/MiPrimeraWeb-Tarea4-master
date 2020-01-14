@@ -1,0 +1,50 @@
+﻿
+body {
+    background-color: $background-color;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    @include break-point(md) {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    header {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        border-width: 0 0 1px;
+        background-color: $site-color-black;
+        height: 4rem;
+    }
+
+    footer {
+        background-color: $site-color-black;
+        color: $site-color-white;
+        height: 2rem;
+        position: fixed;
+        text-align: center;
+        padding-top: 10px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    section{
+        padding-top:4rem;
+        margin-bottom:4rem;
+    }
+}
+
+    .headerlogo{
+        img{
+            float: left;
+            margin-left: 2rem;
+            margin-top: 10px;
+            width: 40px;
+            height: auto;
+        }
+    }
+

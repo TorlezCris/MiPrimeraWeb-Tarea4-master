@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Cibertec.Models.oRDERS>
+
+@{
+	ViewBag.Title = "Order Index";
+}
+
+<h2>Index</h2>
+
+@Messages.AlertMessages()
+
+
+@*@Html.Partial("_List")*@
+
+<div class="pagination"></div>
+<div class="content"></div>
+<div class="pagination"></div>
+
+@Modal.GetModal("Orders", "order.closeModal();")
+
+<script src="~/Scripts/jquery.bootpag.min.js"></script>
+<script src="~/App_JS/cibertec.js"></script>
+<script src="~/App_JS/order.js"></script>
+
+@* Scripts para el SignalR*@
+<script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+<script src="/signalr/hubs"></script>
+<script type="text/javascript">
+    $(function () {
+        var orderHub = $.connection.orderHub;
+        $.connection.hub.start().done(function () {
+            console.log("Connected to Hub...");
+            console.log(order);
+        });
+    })
+</script>

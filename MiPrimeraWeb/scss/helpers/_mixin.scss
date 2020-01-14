@@ -1,0 +1,44 @@
+﻿@mixin break-point($breakpoint) {
+    $bp-xs: "(max-width: 420px)";
+    $bp-sm: "(max-width: 420px)";
+    $bp-md: "(max-width: 768px)";
+    $bp-lg: "(max-width: 1024px)";
+    $bp-xl: "(max-width: 1280px)";
+    $bp-xxl: "(max-width: 1900px)";
+
+    @if $breakpoint == xs {
+        @media #{$bp-xs} {
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm {
+        @media #{$bp-sm} {
+            @content;
+        }
+    }
+
+    @if $breakpoint == md {
+        @media #{$bp-md} {
+            @content;
+        }
+    }
+
+    @if $breakpoint == lg {
+        @media #{$bp-lg} {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xl {
+        @media #{$bp-xl} {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xxl {
+        @media #{$bp-xxl} {
+            @content;
+        }
+    }
+}

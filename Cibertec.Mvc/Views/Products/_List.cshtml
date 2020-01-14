@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Cibertec.Models.Products>
+
+<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.ProductID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ProductName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SupplierId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UnitPrice)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UnitsInStock)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Discontinued)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+		<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.ProductID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ProductName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SupplierId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UnitPrice)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UnitsInStock)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Discontinued)
+				</td>
+				<td>
+					<a href="#" onclick="cibertec.getModal('@Url.Action("Edit", new { id = item.ProductID })');
+							return false;" data-toggle="modal" data-target="#modal-container"
+							class="btn btn-warning btn-sm">
+						<span class="glyphicon glyphicon-edit"> Edit </span>
+					</a>
+
+					<a href="#" onclick="cibertec.getModal('@Url.Action("Delete", new { id = item.ProductID })');
+							return false;" data-toggle="modal" data-target="#modal-container"
+							class="btn btn-danger btn-sm">
+						<span class="glyphicon glyphicon-trash"> Delete </span>
+					</a>
+				</td>
+		</tr>
+		}
+
+	</table>
+</div>

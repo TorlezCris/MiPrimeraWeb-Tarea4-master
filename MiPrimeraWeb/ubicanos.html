@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="css/site.css" rel="stylesheet" />
+    <title>
+        Bienvenidos al curso Web Developer
+    </title>
+</head>
+<body onload="MiFuncion()">
+    <header>
+        <a class="headerlogo" href="index.html">
+            <img src="images/logo.png" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">
+                Menu
+            </button>
+            <ul class="dropdown-content">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ubicanos.html">Ubicanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div id="googleMap" class="map"></div>
+    </section>
+
+    <footer>
+        Cibertec
+        &copy; Todos los derechos reservados. <span id="date"></span>
+    </footer>
+    
+    <script src="scripts/index.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14QXGRrTyG39542wNRXvlGx2dqdzQbLs&callback=cibertec.getLocation"></script>
+</body>
+</html>

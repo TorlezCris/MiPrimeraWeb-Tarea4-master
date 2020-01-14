@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/3ec0969d1f.js"></script>
+</head>
+<body>
+    <header>
+        <a class="headerlogo" href="index.html">
+            <img src="images/logo.png" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">Menu</button>
+            <ul class="dropdown-content">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ubicanos.html">Ubicanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h3>Nuestros Productos</h3>
+    </section>
+
+    <section>
+        <video preload="auto" width="320" height="240" id="video" controls>
+            <source src="/media/video.mp4" type="video/mp4" media="" />
+        </video>
+        <div>
+            <button class="btn btn-success" onclick="cibertec.video.play();">
+                <i class="fa fa-play"></i>
+            </button>
+            <button class="btn btn-success" onclick="cibertec.video.pause();">
+                <i class="fa fa-pause"></i>
+            </button>
+            <button class="btn btn-success" onclick="cibertec.video.stop();">
+                <i class="fa fa-stop"></i>
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <audio controls>
+            <source src="/media/musica.mp3" type="audio/mp3" />
+        </audio>
+    </section>
+
+    <footer>
+        Cibertec &copy; Todos los Derechos Reservados
+    </footer>
+    <script src="scripts/productos.js"></script>
+</body>
+</html>

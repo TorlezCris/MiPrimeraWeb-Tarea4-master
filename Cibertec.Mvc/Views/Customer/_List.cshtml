@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Cibertec.Models.Customers>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a href="#" onclick="cibertec.getModal('@Url.Action("Update", new { id = item.CustomerID })');
+                       return false;" data-toggle="modal" data-target="#modal-container"
+                       class="btn btn-warning btn-sm">
+                        <span class="glyphicon glyphicon-edit"> Edit </span>
+                    </a>
+
+                    <a href="#" onclick="cibertec.getModal('@Url.Action("Delete", new { id = item.CustomerID })');
+                       return false;" data-toggle="modal" data-target="#modal-container"
+                       class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"> Delete </span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

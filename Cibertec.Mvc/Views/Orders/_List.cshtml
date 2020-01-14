@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Cibertec.Models.oRDERS>
+
+<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.ORDERid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CustomerID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.EmployeeID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.OrderDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.RequiredDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ShippedDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ShipVia)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Freight)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ShipName)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.ORDERid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CustomerID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.EmployeeID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.OrderDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.RequiredDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ShippedDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ShipVia)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Freight)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ShipName)
+				</td>
+				@*<td>
+						@Html.ActionLink("Edit", "Edit", new { id = item.ORDERid }) |
+						@Html.ActionLink("Details", "OrderDetail", new { id = item.ORDERid }) |
+						@Html.ActionLink("Delete", "Delete", new { id = item.ORDERid })
+					</td>*@
+				<td>
+					<a href="#" onclick="cibertec.getModal('@Url.Action("Update", new { id = item.ORDERid })');
+                return false;" data-toggle="modal" data-target="#modal-container"
+						 class="btn btn-warning btn-sm">
+						<span class="glyphicon glyphicon-edit"> Edit </span>
+					</a>
+				</td>
+			</tr>
+		}
+
+	</table>
+</div>

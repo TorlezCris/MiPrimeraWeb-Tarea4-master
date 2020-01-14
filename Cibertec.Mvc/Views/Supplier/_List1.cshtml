@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Cibertec.Models.Suppliers>
+
+<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.SupplierID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CompanyName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ContactName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ContactTitle)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Address)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.City)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Region)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.PostalCode)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Country)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Phone)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Fax)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.SupplierID)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CompanyName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ContactName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ContactTitle)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Address)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.City)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Region)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.PostalCode)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Country)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Phone)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Fax)
+				</td>
+				<td>
+            <a href="#" onclick="cibertec.getModal('@Url.Action("Edit", new { id = item.SupplierID })');
+                return false;" data-toggle="modal" data-target="#modal-container"
+                class="btn btn-warning btn-sm">
+                <span class="glyphicon glyphicon-edit"> Edit </span>
+            </a>
+
+            <a href="#" onclick="cibertec.getModal('@Url.Action("Delete", new { id = item.SupplierID })');
+                return false;" data-toggle="modal" data-target="#modal-container"
+                class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-trash"> Delete </span>
+            </a>
+        </td>
+			</tr>
+		}
+
+	</table>
+</div>
